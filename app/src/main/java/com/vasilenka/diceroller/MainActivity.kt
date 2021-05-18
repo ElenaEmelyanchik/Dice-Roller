@@ -11,15 +11,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setListeners()
     }
+
 
     private fun setListeners() {
         binding.buttonRoll.setOnClickListener {
             rollDice()
         }
+        binding.topAppBar.setOnClickListener {
+            binding.drawerLayout.open()
+        }
+
+        binding.navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                else -> {
+                    menuItem.isChecked = true
+                    binding.drawerLayout.close()
+                    true
+                }
+            }
+        }
     }
+
 
     private fun rollDice() {
         binding.imageViewRoll.setImageResource(rollImages.random())
