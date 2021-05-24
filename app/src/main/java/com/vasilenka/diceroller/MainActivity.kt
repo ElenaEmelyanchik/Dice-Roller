@@ -1,7 +1,7 @@
 package com.vasilenka.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.vasilenka.diceroller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
             }
+        }
+
+        binding.navigationView.getHeaderView(0).setOnClickListener {
+            AboutMeActivity.start(this)
         }
     }
 
