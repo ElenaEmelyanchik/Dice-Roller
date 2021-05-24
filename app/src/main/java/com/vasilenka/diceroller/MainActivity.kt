@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonRoll.setOnClickListener {
             rollDice()
         }
-        binding.topAppBar.setOnClickListener {
+        binding.toolbar.topAppBar.setOnClickListener {
             binding.drawerLayout.open()
         }
 

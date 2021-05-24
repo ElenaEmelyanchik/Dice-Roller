@@ -13,6 +13,16 @@ class AboutMeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAboutMeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupView()
+        setupListeners()
+    }
+
+    private fun setupView() {
+        binding.toolbar.topAppBar.setNavigationIcon(R.drawable.ic_arrow_left)
+    }
+
+    private fun setupListeners() {
+        binding.toolbar.topAppBar.setOnClickListener { onBackPressed() }
     }
 
     companion object {
